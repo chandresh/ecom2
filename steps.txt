@@ -8,6 +8,20 @@ Models
 4. LineItem: cart_id, product_id, price, quantity
 5. Cart - no extra fields: id, timestamps [Basket]
 
+
+line_items_path get line_items/1 => show
+get line_items => index
+
+get line_items/1/edit => edit
+
+
+put line_items/1 => update
+
+
+get line_items/new => new -> showing the form
+post line_items => create
+
+
 cart -> line_items <- product
 
 cart.id 1
@@ -55,6 +69,8 @@ line_item 2 <- product 2
 			@cart
 		  end
 	- Link the addtocart button so that it creates a LineItem.
+		<%= link_to image_tag("addtocart.png"), line_items_path, method: :post %>
+	- 
 	
 
 

@@ -6,7 +6,7 @@ Models
 2. Product: name, description, price
 3. Order
 4. LineItem: cart_id, product_id, price, quantity
-5. Cart - no extra fields: id, timestamps
+5. Cart - no extra fields: id, timestamps [Basket]
 
 cart -> line_items <- product
 
@@ -40,8 +40,22 @@ line_item 2 <- product 2
 	- <%= truncate product.description, length: 150 %>
 
 6. Cart
-	- Find cart_id from session or create a new one
+	- Find cart_id from session or create a new one:
+		* create private helper method current_cart in ApplicationController
+		* Cart.find(session[:cart_id]) / Basket.find(session[:cart_id])
+		* Create the model
+		* def current_cart
+    		# find the cart from session
+    		if session[:cart_id].present?
+		      @cart ||= Basket.find(session[:cart_id])
+		    else
+      			@cart = Cart.create
+		      session[:cart_id] = @cart.id
+		    end
+			@cart
+		  end
 	- Link the addtocart button so that it creates a LineItem.
+	
 
 
 

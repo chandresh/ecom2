@@ -1,0 +1,21 @@
+Shopping Cart:
+
+Models
+
+1 Category
+2. Product
+3. Order
+4. LineItem
+
+--------------------------
+
+1. rails new cart
+2. add a root route and delete public/index.html
+3. commit to git
+4. Add template
+	- Add css and rename to scss
+	- Add images
+	- Add other assets like js
+	- Add HTML
+	- Change css to show images like backgrounds
+	- Change HTML to show images

@@ -76,6 +76,15 @@ line_item 2 <- product 2
 	- Write the update action.
 	- instance methods total for cart as well as line_item
 	
+7. Orders
+	- Link to new order for checkout
+	- orders route
+	- Orders Controller
+	- Order Model
+	- created a method: fetch_line_items_from(cart)
+	- Created a summary module and included it in Order & cart
+
+
 
 
 

@@ -4,8 +4,8 @@ Models
 
 1 Category - home work
 2. Product: name, description, price
-3. Order
-4. LineItem: cart_id, product_id, price, quantity
+3. Order: name, address
+4. LineItem: cart_id, product_id, price, quantity, order_id
 5. Cart - no extra fields: id, timestamps [Basket]
 
 

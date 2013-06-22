@@ -1,0 +1,6 @@
+<%= form_for @order do |form| %>
+    Name: <%= form.text_field :name %><br/>
+    Address: <%= form.text_area :address %><br/>
+    <br/>
+    <%= form.submit %>
+<% end %>

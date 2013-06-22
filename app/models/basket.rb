@@ -1,11 +1,7 @@
 class Basket < ActiveRecord::Base
   # attr_accessible :title, :body
   has_many :line_items
-
-
-  def total
-    line_items.map(&:total).inject(:+)
-  end
+  include Summary
 
   def add_line_item_for(product)
     product_line_items = line_items.where(product_id: product.id)

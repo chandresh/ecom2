@@ -1,0 +1,32 @@
+Order Summary
+<br/>
+<br/>
+<table width="680px" cellspacing="0" cellpadding="5">
+  <tr bgcolor="#ddd">
+    <th width="180" align="left">Description</th>
+    <th width="100" align="center">Quantity</th>
+    <th width="60" align="right">Price</th>
+    <th width="60" align="right">Total</th>
+    <th width="90"></th>
+
+  </tr>
+
+  <% @order.line_items.each do |line_item| %>
+      <tr>
+        <td><%= line_item.product.name %>
+        </td>
+        <td align="center"><%= line_item.quantity %></td>
+        <td align="right"><%= number_to_currency line_item.price %></td>
+        <td align="right"><%= number_to_currency line_item.total %></td>
+        <td align="center">
+
+
+        </td>
+      </tr>
+
+  <% end %>
+  <tr>
+    <td colspan="4" style="text-align: right"><%= number_to_currency @order.total %></td>
+    <td></td>
+  </tr>
+</table>

@@ -2,10 +2,18 @@ Shopping Cart:
 
 Models
 
-1 Category
-2. Product
+1 Category - home work
+2. Product: name, description, price
 3. Order
-4. LineItem
+4. LineItem: cart_id, product_id, price, quantity
+5. Cart - no extra fields: id, timestamps
+
+cart -> line_items <- product
+
+cart.id 1
+
+line_item 1 <- product 1 
+line_item 2 <- product 2
 
 --------------------------
 
@@ -22,3 +30,20 @@ Models
 	- Add HTML
 	- Change css to show images like backgrounds
 	- Change HTML to show images
+5. Show products dynamically
+	- Change the template to display products from instance variable
+	- Add instance variable
+	- Add model
+	- Change migration to add precision & scale
+		t.decimal :price, precision: 8, scale: 2
+	- rake db:migrate
+	- <%= truncate product.description, length: 150 %>
+
+6. Cart
+	- Find cart_id from session or create a new one
+	- Link the addtocart button so that it creates a LineItem.
+
+
+
+
+

@@ -70,7 +70,11 @@ line_item 2 <- product 2
 		  end
 	- Link the addtocart button so that it creates a LineItem.
 		<%= link_to image_tag("addtocart.png"), line_items_path, method: :post %>
-	- 
+	- Check if the item already exits in the cart/basket. If yes, update the quantity else add 1 quantity.
+
+	- Add a form to each line_item in the cart show page + an update button.
+	- Write the update action.
+	- instance methods total for cart as well as line_item
 	
 
 

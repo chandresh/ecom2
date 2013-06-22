@@ -1,4 +1,10 @@
 class LineItemsController < ApplicationController
+  def update
+    @line_item = LineItem.find(params[:id])
+    @line_item.update_attributes(params[:line_item])
+    redirect_to current_cart, notice: "Updated the quantity"
+  end
+
   def create
     # grab the current_cart
     product = Product.find(params[:product_id])
@@ -9,7 +15,7 @@ class LineItemsController < ApplicationController
       @line_item = @cart_line_items.last
       @line_item.quantity += 1
     else
-      @line_item = current_cart.line_items.new(product_id: product.id, quantity: 1)
+      @line_item = current_cart.line_items.new(product_id: product.id, quantity: 1, price: product.price)
     end
 
     if @line_item.save

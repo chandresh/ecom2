@@ -2,7 +2,7 @@ Cart::Application.routes.draw do
 
   root :to => 'welcome#home'
 
-  resources :line_items, only: [:create]
+  resources :line_items, only: [:create, :update]
   resources :baskets, only: [:show]
 
   # The priority is based upon order of creation:

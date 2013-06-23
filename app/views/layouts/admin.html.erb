@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cart</title>
+  <%= stylesheet_link_tag "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<div id="wrapper">
+  <div id="wrapper-bgbtm">
+
+    <!-- end #header -->
+    <div id="menu">
+      <ul>
+        <li class="current_page_item"><a href="#">Homepage</a></li>
+        <li><a href="#">Users</a></li>
+        <li><a href="#">Orders</a></li>
+        <li><a href="#">Products</a></li>
+        <li><a href="#">Categories</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+    <!-- end #menu -->
+    <div id="page">
+      <div id="page-bgtop">
+        <div id="page-bgbtm">
+          <div id="content">
+            <%= yield %>
+          </div>
+          <!-- end #content -->
+
+          <!-- end #sidebar -->
+          <div style="clear: both;">&nbsp;</div>
+        </div>
+      </div>
+    </div>
+    <!-- end #page -->
+    <div id="footer">
+      <p>Copyright (c) 2011 Sitename.com. All rights reserved. Design by <a
+      href="http://www.freecsstemplates.org/" rel="nofollow">FreeCSSTemplates.org</a>.</p>
+    </div>
+    <!-- end #footer -->
+  </div>
+</div>
+
+</body>
+</html>

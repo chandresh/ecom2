@@ -84,6 +84,14 @@ line_item 2 <- product 2
 	- created a method: fetch_line_items_from(cart)
 	- Created a summary module and included it in Order & cart
 
+8. Admin Section:
+    - Scaffold for admin. [We renamed files that could be overwritten.]
+        - Do without scaffold
+        - Rename the files that could be overwritten.
+        - Do scaffolding on another test project.
+        - Use different names in frontend & backend
+    -
+
 
 
 

@@ -1,4 +1,4 @@
-class OrdersController < ApplicationController
+class FrontendOrdersController < ApplicationController
   def new
     @order = Order.new
   end
@@ -10,7 +10,7 @@ class OrdersController < ApplicationController
 
       session[:order_id] = @order.id
 
-      redirect_to @order
+      redirect_to frontend_order_url(@order)
     else
       render :new
     end

@@ -5,7 +5,14 @@ Cart::Application.routes.draw do
   resources :line_items, only: [:create, :update]
   resources :baskets, only: [:show]
 
-  resources :orders, only: [:new, :create, :show]
+  resources :frontend_orders, only: [:new, :create, :show]
+
+  namespace :admin do
+    resources :products
+    resources :orders do
+      resources :line_items, only: [:index]
+    end
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
